@@ -109,7 +109,7 @@ function handleSearchBeforeLoad(event) {
 		MGMLoadedInfo = true;
 	}
 	
-	if (element.src=="http://www.google.com/images/srpr/nav_logo13.png" && element.width==167) {
+	if (element.src.match("nav_logo") && element.width==167) {
 		if (element.getAttribute("MGMChanged"))
 			return;
 		var parent = element.parentNode;
@@ -125,7 +125,7 @@ function handleSearchBeforeLoad(event) {
 		element.width = "137";
 		element.height = "49";
 		element.setAttribute("MGMChanged", true);
-	} else if (element.src=="https://encrypted.google.com/images/logos/ssl_logo_beta_49.gif") {
+	} else if (element.src.match("ssl_logo_beta")) {
 		if (element.getAttribute("MGMChanged"))
 			return;
 		if (MGMCustomSearch==null || MGMCustomSearch=="") {
